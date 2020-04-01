@@ -1,44 +1,58 @@
-
 {% extends "layout.html" %}
-
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+  Sign in
 {% endblock %}
 
 {% block content %}
 
+  <!-- DEVS: Ignore the HTML here, it's not correct, but it means the error validation works -->
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        The GOV.UK Prototype Kit
-        <span class="govuk-caption-xl">{{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
-      <p>
-        This kit lets you rapidly create HTML prototypes of GOV.UK services.
-      </p>
 
-      <p>
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
-      </p>
+      <form action="/index" method="GET">
+        <span class="govuk-caption-xl">Emergency filing service internal</span>
+        <h1 class="govuk-heading-xl">
+          Sign in</h1>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" data-required="data-required" data-error="Enter your email address">
+            <legend>
+              <label class="govuk-label" for="username">
+                Username
+              </label>
+            </legend>
+            <input class="govuk-input govuk-!-width-two-thirds" id="username" name="username" type="text">
+          </fieldset>
+        </div>
 
-      <h2 class="govuk-heading-m">About this page</h2>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" data-required="data-required" data-error="Enter your password">
+            <legend>
+              <label class="govuk-label" for="chs-password">
+                Password
+              </label>
+            </legend>
+            <input class="govuk-input govuk-!-width-two-thirds" id="chs-password" name="chs-password" type="password">
+          </fieldset>
+        </div>
 
-      <p>We recommend you add links to your prototype to this page, rather than delete it.
-        You'll find this page in the kit at '/app/views/index.html'.</p>
+      </fieldset>
 
-      <p>You can change the service name by editing the file '/app/config.js'.</p>
+      {{ govukButton({
+          text: "Sign in",
+          href: "/applications/applications-list"
+        }) }}
+    </form>
 
-      <h2 class="govuk-heading-m">Examples and documentation</h2>
+    {{ govukDetails({
+   summaryText: "Help with registering",
+   text: "A manager must authorise access by raising a request via service now."
+ }) }}
+    {{ govukDetails({
+summaryText: "Forgotten your password?",
+text: "The front end support team will be able to help. They are available 9 - 5, Monday- Friday."
+}) }}
 
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <a href="/docs/tutorials-and-examples">Example pages and documentation</a>
-        </li>
-        <li>
-          <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
-        </li>
-      </ul>
-    </div>
+  </div>
 </div>
 
 {% endblock %}
