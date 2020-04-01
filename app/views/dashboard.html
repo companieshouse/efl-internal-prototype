@@ -35,380 +35,413 @@
   </div>
   <br>
 
-  <div class="govuk-tabs" data-module="tabs">
-    <h2 class="govuk-tabs__title">
-      Contents
-    </h2>
+  {% set pastDayHtml %}
+  <h2 class="govuk-heading-l">Received</h2>
+  {{ govukTable({
 
-    <ul class="govuk-tabs__list">
-      <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab govuk-tabs__tab--selected" href="#received">
-          Received (4)
-        </a>
-      </li>
-      <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="#inprogress">
-          In progress (8)
-        </a>
-      </li>
-      <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="#archive">
-          Archive (2)
-        </a>
-      </li>
-    </ul>
-    <section class="govuk-tabs__panel" id="received">
-      <div class="govuk-grid-column-full-width">
+firstCellIsHeader: false,
+class:sortable,
+head: [
+{
+html: "<a href=''>Reference</a>"
+},
+{
+html: " <a href=''>Name</a>"
+},
+{
+html: " <a href=''>Type</a>",
+format: "numeric"
+},
 
-        <h2 class="govuk-heading-l">Received</h2>
-      </div>
+{
+html: " <a href=''>Status</a>"
+},
+{
+html: "  <a href='' class='sort'>Status changed</a>",
+format: "numeric"
+}
+],
+rows: [
+[
+{
+html: " <a href=''>ZF3Y0-BK5A2</a>"
+},
 
-      <div class="govuk-grid-column-full-width">
-        {{ govukTable({
+{
+text: "Freya Smith"
+},
+{
+text: "243",
+format: "numeric"
+},
+{
+text: "Band C"
+},
+{
+text: "01 May 2019",
+format: "numeric"
+}
+],
 
-      firstCellIsHeader: false,
-      class:sortable,
-      head: [
-      {
-      html: "<a href=''>Reference</a>"
-      },
-      {
-      html: " <a href=''>Name</a>"
-      },
-      {
-      html: " <a href=''>Type</a>",
-      format: "numeric"
-      },
-      {
-      html: " <a href=''>Status</a>",
-      format: "numeric"
-      },
-      {
- html: " <a href='' class='sort'>Application received</a>",
-      format: "numeric"
+[
+{
+html: " <a href='/'>61UY5-XTY74</a>"
+},{
+text: "Joe Green"
+},
+{
+text: "243",
+format: "numeric"
+},
+
+{
+text: "Refer to NCA"
+},
+{
+text: "11 Mar 2019",
+format: "numeric"
+}
+],
+
+[
+{
+html: " <a href='/'>TL119-9P8M8</a>"
+},{
+text: "Joe Green"
+},
+{
+text: "790ZF",
+format: "numeric"
+},
+
+{
+text: "Band E"
+},
+{
+text: "1 Mar 2019",
+format: "numeric"
+}
+
+],
+
+[
+{
+html: " <a href='/'>ZT988-NF163</a>"
+},
+{
+text: "Chris Jones"
+},
+{
+text: "790ZG",
+format: "numeric"
+},
+
+{
+text: "Refer to NCA"
+},
+{
+text: "22 Feb 2019",
+format: "numeric"
+}
+],
+[
+{
+html: " <a href='/'>B822E-G66D3</a>"
+},
+
+{
+text: "Sue Barker"
+},
+{
+text: "243",
+format: "numeric"
+},
+{
+text: "More info"
+},
+{
+text: "1 Feb 2019",
+format: "numeric"
+}
+],
+[
+{
+html: " <a href='/'>WRY65-P82WE</a>"
+},
+{
+text: "Sally Thomas"
+},
+{
+text: "790ZF",
+format: "numeric"
+},
+
+{
+text: "Band C"
+},
+{
+text: "25 Jan 2019",
+format: "numeric"
+}
+]
+
+]
+}) }}
+  {% endset -%}
+
+  {% set pastWeekHtml %}
+  <h2 class="govuk-heading-l">In progress</h2>
+  {{ govukTable({
+
+firstCellIsHeader: false,
+class:sortable,
+head: [
+{
+html: "<a href=''>Reference</a>"
+},
+{
+html: " <a href=''>Name</a>"
+},
+{
+html: " <a href=''>Type</a>",
+format: "numeric"
+},
+
+{
+html: " <a href=''>Status</a>"
+},
+{
+html: "  <a href='' class='sort'>Status changed</a>",
+format: "numeric"
+}
+],
+rows: [
+[
+{
+html: " <a href=''>ZF3Y0-BK5A2</a>"
+},
+
+{
+text: "Freya Smith"
+},
+{
+text: "243",
+format: "numeric"
+},
+{
+text: "Band C"
+},
+{
+text: "01 May 2019",
+format: "numeric"
+}
+],
+
+[
+{
+html: " <a href='/'>61UY5-XTY74</a>"
+},{
+text: "Joe Green"
+},
+{
+text: "243",
+format: "numeric"
+},
+
+{
+text: "Refer to NCA"
+},
+{
+text: "11 Mar 2019",
+format: "numeric"
+}
+],
+
+[
+{
+html: " <a href='/'>TL119-9P8M8</a>"
+},{
+text: "Joe Green"
+},
+{
+text: "790ZF",
+format: "numeric"
+},
+
+{
+text: "Band E"
+},
+{
+text: "1 Mar 2019",
+format: "numeric"
+}
+
+],
+
+[
+{
+html: " <a href='/'>ZT988-NF163</a>"
+},
+{
+text: "Chris Jones"
+},
+{
+text: "790ZG",
+format: "numeric"
+},
+
+{
+text: "Refer to NCA"
+},
+{
+text: "22 Feb 2019",
+format: "numeric"
+}
+],
+[
+{
+html: " <a href='/'>B822E-G66D3</a>"
+},
+
+{
+text: "Sue Barker"
+},
+{
+text: "243",
+format: "numeric"
+},
+{
+text: "More info"
+},
+{
+text: "1 Feb 2019",
+format: "numeric"
+}
+],
+[
+{
+html: " <a href='/'>WRY65-P82WE</a>"
+},
+{
+text: "Sally Thomas"
+},
+{
+text: "790ZF",
+format: "numeric"
+},
+
+{
+text: "Band C"
+},
+{
+text: "25 Jan 2019",
+format: "numeric"
+}
+]
+
+]
+}) }}
+  {% endset -%}
+
+  {% set pastMonthHtml %}
+  <h2 class="govuk-heading-l">Archive</h2>
+  {{ govukTable({
+
+firstCellIsHeader: false,
+class:sortable,
+head: [
+{
+html: "<a href='/'>Reference</a>"
+},
+{
+html: " <a href='/'>Name</a>"
+},
+{
+html: " <a href='/'>Type</a>",
+format: "numeric"
+},
+{
+html: " <a href='/'>Status</a>",
+format: "numeric"
+},
+{
+html: " <a href='' class='sort'>Status changed</a>",
+format: "numeric"
+}
+],
+rows: [
+[
+{
+html: " <a href='/'>N7F88-K2HR8</a>"
+},
+{
+text: "Sally Thomas"
+},
+{
+text: "243",
+format: "numeric"
+},
+
+{
+text: "Complete",
+format: "numeric"
+},
+{
+text: "2 Apr 2019",
+format: "numeric"
+}
+],
+[
+{
+html: " <a href='/'>ZT988-NF163</a>"
+},
+{
+text: "Joe Green"
+},
+{
+text: "790ZF",
+format: "numeric"
+},
+
+{
+text: "Rejected",
+format: "numeric"
+},
+{
+text: "11 Mar 2019",
+format: "numeric"
+}
+]
+]
+}) }}
+
+  {% endset -%}
+
+  {{ govukTabs({
+  items: [
+    {
+      label: "Received",
+      id: "past-day",
+      panel: {
+        html: pastDayHtml
       }
-      ],
-      rows: [
-
-      [
-      {
-      html: " <a href='/applications/view-application-tabs-243'>N4OBD-U2SGP</a>"
-      },{
-      text: "Tanya Jones"
-      },
-      {
-      text: "790ZF",
-      format: "numeric"
-      },
-
-      {
-      text: "Received",
-      format: "numeric"
-      },
-      {
-      text: "02 Aug 2019",
-      format: "numeric"
+    },
+    {
+      label: "In progress",
+      id: "past-week",
+      panel: {
+        html: pastWeekHtml
       }
-
-      ],
-
-      [{
-      html: " <a href='/applications/view-application-tabs-ZF'>HZ119-98TW8</a>"
-      },
-      {
-      text: "Robert Carroll"
-      },
-      {
-      text: "790ZG",
-      format: "numeric"
-      },
-      {
-      text: "Received",
-      format: "numeric"
-      },
-      {
-      text: "29 Jul 2019",
-      format: "numeric"
+    },
+    {
+      label: "Archive",
+      id: "past-month",
+      panel: {
+        html: pastMonthHtml
       }
-      ],   [
-        {
-        html: " <a href='/applications/view-application-tabs-ZG'>57VJY-32E5N</a>"
-        },
+    }
+  ]
+}) }}
 
-        {
-         text: "Trevor Davies"
-        },
-        {
-         text: "243",
-         format: "numeric"
-        },
-        {
-         text: "Received",
-         format: "numeric"
-        },
-        {
-         text: "29 Jul 2019",
-         format: "numeric"
-        }
-        ],  [
-        {
-        html: " <a href='/applications/view-application-tabs-243'>P0T56-UT981</a>"
-        },{
-        text: "Jeff Richards"
-        },
-        {
-         text: "243",
-         format: "numeric"
-        },
-
-        {
-         text: "Received",
-         format: "numeric"
-        },
-        {
-         text: "01 Aug 2019",
-         format: "numeric"
-        }
-
-        ]
-
-      ]
-      }) }}
-
-      </div>
-    </section>
-    <section class="govuk-tabs__panel" id="inprogress">
-      <h2 class="govuk-heading-l">In progress</h2>
-
-      <div class="govuk-grid-column-full-width">
-        {{ govukTable({
-
-      firstCellIsHeader: false,
-      class:sortable,
-      head: [
-      {
-      html: "<a href=''>Reference</a>"
-      },
-      {
-      html: " <a href=''>Name</a>"
-      },
-      {
-      html: " <a href=''>Type</a>",
-      format: "numeric"
-      },
-
-      {
-      html: " <a href=''>Status</a>"
-      },
-      {
-      html: "  <a href='' class='sort'>Status changed</a>",
-      format: "numeric"
-      }
-      ],
-      rows: [
-  [
-      {
-      html: " <a href=''>ZF3Y0-BK5A2</a>"
-      },
-
-      {
-      text: "Freya Smith"
-      },
-      {
-      text: "243",
-      format: "numeric"
-      },
-      {
-      text: "Band C"
-      },
-      {
-      text: "01 May 2019",
-      format: "numeric"
-      }
-      ],
-
-      [
-      {
-      html: " <a href='/'>61UY5-XTY74</a>"
-      },{
-      text: "Joe Green"
-      },
-      {
-      text: "243",
-      format: "numeric"
-      },
-
-      {
-      text: "Refer to NCA"
-      },
-      {
-      text: "11 Mar 2019",
-      format: "numeric"
-      }
-      ],
-
-      [
-      {
-      html: " <a href='/'>TL119-9P8M8</a>"
-      },{
-      text: "Joe Green"
-      },
-      {
-      text: "790ZF",
-      format: "numeric"
-      },
-
-      {
-      text: "Band E"
-      },
-      {
-      text: "1 Mar 2019",
-      format: "numeric"
-      }
-
-      ],
-
-      [
-      {
-      html: " <a href='/'>ZT988-NF163</a>"
-      },
-      {
-      text: "Chris Jones"
-      },
-      {
-      text: "790ZG",
-      format: "numeric"
-      },
-
-      {
-      text: "Refer to NCA"
-      },
-      {
-      text: "22 Feb 2019",
-      format: "numeric"
-      }
-      ],
-      [
-      {
-      html: " <a href='/'>B822E-G66D3</a>"
-      },
-
-      {
-      text: "Sue Barker"
-      },
-      {
-      text: "243",
-      format: "numeric"
-      },
-      {
-      text: "More info"
-      },
-      {
-      text: "1 Feb 2019",
-      format: "numeric"
-      }
-      ],
-      [
-      {
-      html: " <a href='/'>WRY65-P82WE</a>"
-      },
-      {
-      text: "Sally Thomas"
-      },
-      {
-      text: "790ZF",
-      format: "numeric"
-      },
-
-      {
-      text: "Band C"
-      },
-      {
-      text: "25 Jan 2019",
-      format: "numeric"
-      }
-      ]
-
-      ]
-      }) }}
-
-      </div>
-    </section>
-    <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="archive">
-      <h2 class="govuk-heading-l">Archive</h2>
-
-      <div class="govuk-grid-column-full-width">
-        {{ govukTable({
-
-     firstCellIsHeader: false,
-     class:sortable,
-     head: [
-     {
-     html: "<a href='/'>Reference</a>"
-     },
-     {
-     html: " <a href='/'>Name</a>"
-     },
-     {
-     html: " <a href='/'>Type</a>",
-     format: "numeric"
-     },
-     {
-     html: " <a href='/'>Status</a>",
-     format: "numeric"
-     },
-     {
-     html: " <a href='' class='sort'>Status changed</a>",
-     format: "numeric"
-     }
-     ],
-     rows: [
-     [
-     {
-     html: " <a href='/'>N7F88-K2HR8</a>"
-     },
-     {
-     text: "Sally Thomas"
-     },
-     {
-      text: "243",
-      format: "numeric"
-     },
-
-     {
-      text: "Complete",
-      format: "numeric"
-     },
-     {
-      text: "2 Apr 2019",
-      format: "numeric"
-     }
-     ],
-     [
-     {
-     html: " <a href='/'>ZT988-NF163</a>"
-     },
-     {
-     text: "Joe Green"
-     },
-     {
-      text: "790ZF",
-      format: "numeric"
-     },
-
-     {
-      text: "Rejected",
-      format: "numeric"
-     },
-     {
-      text: "11 Mar 2019",
-      format: "numeric"
-     }
-     ]
-     ]
-     }) }}
-
-      </div>
-    </section>
-  </div>
+</div>
 {% endblock %}
