@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  View details
+{% endblock %}
+{% block beforeContent %}
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">interactiondesign@companieshouse.gov.uk
+    </li>
+    <li>
+      <a href="/account/login" id="user-signout">Sign out</a>
+    </li>
+  </ul>{{ govukBackLink({
+  text: "Back",
+  href: "dashboard"
+}) }}
+{% endblock %}
+{% block content %}
+
+  <!-- DEVS: Ignore the HTML here, it's not correct, but it means the error validation works -->
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Company number 04934935</h1>
+      {{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Company number"
+      },
+      value: {
+        text: "04934935"
+      }
+    },
+    {
+      key: {
+        text: "Authentication number"
+      },
+      value: {
+        text: "000000"
+      }
+    },
+    {
+      key: {
+        text: "Contact email"
+      },
+      value: {
+        html: "info@companyname.com"
+      }
+    }
+  ]
+}) }}
+      <h2 class="govuk-heading-l">Files uploaded</h2>
+      {{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "File type"
+      },
+      value: {
+        text: "Notify a cancellation of shares (SH06)"
+      }
+    },
+    {
+      key: {
+        text: "Payment reference"
+      },
+      value: {
+        text: "PY0001"
+      }
+    },
+    {
+      key: {
+        text: "Attached file"
+      },
+      value: {
+        html: "SH06.pdf"
+      },
+      actions: {
+   items: [
+     {
+       href: "/public/upload/SH06.pdf",
+       text: "View",
+       visuallyHiddenText: "date of birth"
+     }
+   ]
+ }
+    }
+  ]
+}) }}
+    </div>
+  </div>
+
+{% endblock %}
