@@ -21,7 +21,42 @@
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-xl">Company number: 04934935</span>
       <h1 class="govuk-heading-xl">ZLC Limited</h1>
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
+      {{ govukRadios({
+        idPrefix: "where-do-you-live",
+        name: "where-do-you-live",
+        fieldset: {
+          legend: {
+            text: "Update status"
+          }
+        },
+        items: [
+        {
+          value: "england",
+          text: "Received",
+          checked: true,
+          disabled: true
+        },
+          {
+            value: "england",
+            text: "Processed"
+          },
+          {
+            value: "scotland",
+            text: "Archive"
+          }
+        ]
+      }) }}
+      {{ govukButton({
+  text: "Cancel",
+  classes: "govuk-button--secondary",
+    href: "view-details"
+}) }}
+      {{ govukButton({
+  text: "Update",
+  href: "view-details"
+}) }}
     </div>
   </div>
 
