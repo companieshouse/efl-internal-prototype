@@ -21,6 +21,10 @@
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-xl">Company number: 04934935</span>
       <h1 class="govuk-heading-xl">ZLC Limited</h1>
+      {{ govukButton({
+  text: "Change status",
+  href: "status"
+}) }}
       {{ govukSummaryList({
   rows: [
   {

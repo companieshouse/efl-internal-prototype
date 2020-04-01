@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  View details
+{% endblock %}
+{% block beforeContent %}
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">interactiondesign@companieshouse.gov.uk
+    </li>
+    <li>
+      <a href="/account/login" id="user-signout">Sign out</a>
+    </li>
+  </ul>{{ govukBackLink({
+  text: "Back",
+  href: "view-details"
+}) }}
+{% endblock %}
+{% block content %}
+
+  <!-- DEVS: Ignore the HTML here, it's not correct, but it means the error validation works -->
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Company number: 04934935</span>
+      <h1 class="govuk-heading-xl">ZLC Limited</h1>
+
+    </div>
+  </div>
+
+{% endblock %}
